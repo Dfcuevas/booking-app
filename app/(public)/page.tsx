@@ -1,12 +1,7 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { ButtonLink } from "@/components/ui/button";
-import { VenueCard } from "@/features/venues/components/venue-card";
-import { getVenues } from "@/lib/data/repositories/venues";
 
 export default async function HomePage() {
-  const venues = await getVenues();
-  const featured = venues.slice(0, 2);
-
   return (
     <PageContainer>
       <section className="py-8 text-center sm:py-12">
@@ -24,11 +19,7 @@ export default async function HomePage() {
 
       <section>
         <h2 className="mb-4 text-xl font-semibold">Destacados</h2>
-        <div className="grid gap-4">
-          {featured.map((venue) => (
-            <VenueCard key={venue.id} venue={venue} />
-          ))}
-        </div>
+        <div className="grid gap-4"></div>
       </section>
     </PageContainer>
   );
